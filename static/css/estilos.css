@@ -42,6 +42,7 @@
 }
 
 .Header{
+	
 	margin-top: 3.75em;
 	background-image: url('../images/maraton.jpg');
 	background-repeat: no-repeat;
@@ -52,6 +53,7 @@
 }
 
 .Header-imageContainer{
+
 	margin: 0;
 }
 
@@ -82,6 +84,7 @@
 }
 
 .Header-name{
+	font-family: 'Arizonia', cursive;	
 	color: #EA4200;
 	font-size: 1.5em;
 	font-weight: 600;
@@ -177,4 +180,9 @@
 	border-radius: 1em;
 	border: none;
 	padding: .5em 1em;
+}
+
+.fuente{
+	font-family: 'Arizonia', cursive;
+	text-align: center;
 }
