@@ -1,3 +1,4 @@
+
 ::selection
   background red
 
@@ -30,6 +31,7 @@
 .MainMenu-link
   color #00DBFF
   text-decoration none
+  line-height 3.75em
   margin-right 1.75em
 
 .Header
@@ -67,6 +69,7 @@
 
 .Profile
   text-align center
+  padding 0 1em
 
 .Profile-link
   background orange
@@ -75,14 +78,28 @@
   padding .5em 1em
   border-radius 2em
   margin-right .5em
+  display inline-block
+  margin-bottom 1em
+  &.twitter
+    background #55ACEE
+  &.facebook
+    background #4862A3
+  &.github
+    background black
+    color white
+      
 
 .Work
   margin-top 2em
   text-align center
+  &-Container
+    display flex
+    flex-wrap wrap
+    justify-content space-around
 
 .Work-item
   display inline-block
-  margin-right 1.8em
+  //margin-right 1.8em
   margin-bottom 1.8em
 
 .Work-imageContainer
@@ -104,24 +121,29 @@
 .Footer-title
   color white
 
-.Footer-description
-  text-align center
 
 .Footer-left
   display inline-block
   max-width 32em
   text-align center
+  vertical-align top
+
+  
 
 .Footer-form
   text-align center
   display inline-block
 
-.Footer-formInput,.Footer-textarea
+.Footer-formInput,
+.Footer-textarea
   background white
   border none
+  display block
   border-radius 2em
   padding .5em
   margin 0 auto 1em
+  outline 0 //quita borde cuando hay  focus
+  
 
 .Footer-formInput
 
@@ -139,3 +161,16 @@
   font-family 'Arizonia', cursive
   text-align center
 
+@media screen and (max-width:480px)
+  .Profile
+    &-link
+      display block
+      
+
+@media screen and (max-width:767px)
+  .Footer-form
+    display block
+  .Footer-formInput
+    width 90%
+  .Work-item
+    // margin-right 0
