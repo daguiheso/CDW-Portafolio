@@ -1,3 +1,4 @@
+@import "nib"
 @import "slider.styl"
 @import "fonts.styl"
 
@@ -37,14 +38,28 @@
   margin-right 1.75em
 
 .Header
-  margin-top 3.75em
   background-image url('../images/maraton.jpg')
-  background-repeat no-repeat
   background-position center
+  background-repeat no-repeat
   background-size cover
-  text-align center
+  margin-top 3.75em
   padding 1.2em 0
-
+  text-align center
+  &-button
+    background white 
+    border none
+    border-radius 50%
+    display none
+    height 40px
+    line-height 40px
+    outline 0
+    position fixed
+    right 1em
+    top 1em
+    width 40px
+    z-index 3
+    
+      
 .Header-imageContainer
   margin 0
 
@@ -55,7 +70,7 @@
   &:hover
     border 7px solid white
     border-color orange
-    -webkit-transform rotateY(360deg)
+    transform rotateY(360deg)
 
 .Header-link
   color white
@@ -132,8 +147,6 @@
   text-align center
   vertical-align top
 
-  
-
 .Footer-form
   text-align center
   display inline-block  
@@ -148,8 +161,6 @@
   margin 0 auto 1em
   outline 0 //quita borde cuando hay  focus
   width 90%
-
-
 
 .Footer-textarea
   resize none
@@ -184,5 +195,21 @@
   .Footer-formInput
     width 90%
   
+  .Header
+    margin-top 0
+    &-button
+      &.is-active        
+        display block
+
+  .MainMenu
+    height auto
+    left -200px
+    width 200px
+    transition .3s
+    &.is-active
+      left 0     
+    &-item 
+      display block
+    
 
 

@@ -12,7 +12,9 @@
 	</head>
 	<body>	
 		<header id="yo" class="Header">
-			<nav class="MainMenu">
+			<button class="Header-button is-active icon-showMenu" id="showMenu"></button>
+			<button class="Header-button icon-hideMenu" id="hideMenu"></button>
+			<nav class="MainMenu" id="menu">
 				<ul class="MainMenu-list"><!--Etiq Listas-->
 					<li class="MainMenu-item">
 						<a class="MainMenu-link" href="#yo">Yo</a>
@@ -37,11 +39,7 @@
 				<p class="Header-name">Daniel Hernández</p>
 				
 			</figure>			
-		</header>
-		<!-- <div class="Caja">
-			<p class="Caja-texto">Daniel Hernández</p>			
-		</div> -->
-
+		</header>		
 		<section id="perfil" class="Profile">
 			<div class="u-containerDefault">
 				<h2 class="Profile-title u-title">Mi perfil</h2>
@@ -116,9 +114,7 @@
 					</figure>
 				</article>		
 			</div>
-		</section>
-
-		
+		</section>	
 
 		<footer id="contacto" class="Footer">
 			<div class="Footer-left">
@@ -134,10 +130,43 @@
 		</footer>
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<script src="../static/js/vendors/responsiveslides.min.js"></script>
+		<script src="../static/js/vendors/hammer.min.js"></script>
 		<script>
-		  $(function() {
-		    $(".rslides").responsiveSlides();
-		  });
+		    $(function() {
+		    	$(".rslides").responsiveSlides();
+		    });
+
+		    if(window.matchMedia("(max-width:768px)").matches){
+	    		var $buttonShowMenu = document.getElementById('showMenu');
+				var $buttonHideMenu = document.getElementById('hideMenu');
+
+				var $menu = document.getElementById('menu');
+
+				var $body = document.querySelector('body');
+
+				var body = new Hammer($body); //instancia de Hammer.js y como parametro el elemento que quiero que este escuchando todos los eventos
+				//hacer que body escuche eventos
+
+				// body.on('panright', function(){
+				// 	console.log('ha ocurrido un pan');
+				// });
+
+				var mostrarMenu = function(){					
+					$menu.classList.add('is-active');   //añadiendo clase a elemento
+					$buttonHideMenu.classList.add('is-active');
+				}
+				
+				var ocultarMenu = function(){
+					$menu.classList.remove('is-active');   //añadiendo clase a elemento
+					$buttonHideMenu.classList.remove('is-active');
+				}
+
+				$buttonShowMenu.addEventListener("click", mostrarMenu);
+				$buttonHideMenu.addEventListener("click", ocultarMenu);
+
+				body.on('panright', mostrarMenu);
+				body.on('panleft', ocultarMenu);
+  		    }
 		</script>
 	</body>
 </html>
