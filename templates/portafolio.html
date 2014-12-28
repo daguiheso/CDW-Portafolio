@@ -52,7 +52,15 @@
 				<a class="Profile-link facebook" href="https://www.facebook.com/daviheso" target="_black">Daniel Hernandez</a>
 				<a class="Profile-link github" href="https://github.com/daguiheso" target="_black">daguiheso</a>		
 			</div>
-
+		<section class="Slider">
+			<div class="Slider-container">
+				<ul class="rslides">
+				  <li><img src="../static/images/maraton.jpg" alt="maraton Microsoft" title="Maratones" width="960" height="539"></li>
+				  <li><img src="../static/images/grande.jpg" alt="yo" title="Programando" width="1280" height="720"></li>
+				  <li><img src="../static/images/grande2.jpg" alt="yo2" title="Developer" width="1280" height="720"></li>
+				</ul>
+			</div>
+		</section>
 		</section>
 		<section id="trabajo" class="Work">
 			<div class="u-containerDefault">
@@ -124,6 +132,13 @@
 				<button type="submit" class="Footer-button">Contactarme</button>
 			</form>
 		</footer>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="../static/js/vendors/responsiveslides.min.js"></script>
+		<script>
+		  $(function() {
+		    $(".rslides").responsiveSlides();
+		  });
+		</script>
 	</body>
 </html>
 
