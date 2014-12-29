@@ -133,7 +133,10 @@
 		<script src="../static/js/vendors/hammer.min.js"></script>
 		<script>
 		    $(function() {
-		    	$(".rslides").responsiveSlides();
+		    	$(".rslides").responsiveSlides({
+				  auto: false,
+				  pager:true				  
+				});		    	
 		    });
 
 		    if(window.matchMedia("(max-width:768px)").matches){
